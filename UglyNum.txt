@@ -1,0 +1,29 @@
+ class Solution {
+    public:
+
+        int GetUglyNumber_Solution(int index) {
+            vector<int> uglyNumber;
+
+            if(index>0&&index<=6) return index;
+            for(size_t i=1;i<=6;i++){
+                uglyNumber.push_back(i);
+            }
+            size_t i=0;
+            while(uglyNumber.size()!=index)
+            {
+                while(i!=uglyNumber.size()){
+                size_t j=i+1;
+                while(j!=uglyNumber.size()){
+                    if(uglyNumber[i]*uglyNumber[j]>uglyNumber[uglyNumber.size()-1]){
+                        uglyNumber.push_back(uglyNumber[i]*uglyNumber[j]);
+                        break;
+                    }
+                    else j++;
+                }
+                   if(j!=uglyNumber.size())break;
+                   else i++;                
+                }
+            }
+            return uglyNumber[uglyNumber.size()];
+        }
+    };
