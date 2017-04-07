@@ -1,0 +1,3 @@
+STL是以源码的形式出现的
+The note about C++ standard:所有标准头文件不再有扩展名出现
+GNU通过GPL(广泛开放授权)来保护
