@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+ bool canPlaceFlowers(vector<int>& flowerbed, int n) 
+ {
+    if(n == 0) return true;
+    for(auto i = 0; i < flowerbed.size(); ++i)
+	{
+		if(flowerbed[i] == 1) continue;
+		if(i >= 1 && flowerbed[i - 1] == 1) continue;
+		if(i < flowerbed.size() - 1 && flowerbed[i + 1] == 1) continue;
+		flowerbed[i] = 1;
+        n--;
+        if(n == 0) return true;
+	}
+	return false;
+}
+
+int main()
+{
+	vector<int> flowerbed = {1,0,0,0,1};
+	cout << canPlaceFlowers(flowerbed, 2) << endl;
+	return 0;
+}

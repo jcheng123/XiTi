@@ -1,0 +1,11 @@
+#include <iostream>
+
+using namespace std;
+
+
+
+int findPaths(int m, int n, int N, int i, int j)
+{
+    if(N == 0) return 0;
+    if()
+}
